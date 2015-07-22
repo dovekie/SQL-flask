@@ -35,5 +35,17 @@ def add_student_confirmation():
     hackbright.make_new_student(fname, lname, github)
     return render_template("add-student-confirm.html", github = github)
 
+@app.route("/grades_form")
+def grades_form():
+    """Show form for getting projects and grades from a student."""
+
+    return render_template("student_grades_form.html")
+
+@app.route("/grades")
+def get_grades():
+    """Show all grades and projects for one student by inputing github name."""
+
+    return render_template("student_grades.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
